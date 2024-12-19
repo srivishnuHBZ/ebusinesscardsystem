@@ -1,0 +1,173 @@
+/*==========================HEADER*/
+#clockdate {
+	float: right;
+}
+
+.clockdate-wrapper {
+	background-color: transparent;
+	padding: 10px;
+	max-width: 170px;
+	width: 100%;
+	text-align: center;
+	margin: 0 0 -2px 0;
+}
+
+#clock {
+	background-color: transparent;
+	font-family: sans-serif;
+	font-size: 25px;
+	text-shadow: 0px 0px 1px #fff;
+	color: #fff;
+}
+
+#clock span {
+	color: #888;
+	text-shadow: 0px 0px 1px #333;
+	font-size: 17px;
+	position: relative;
+	top: -7px;
+}
+
+#date {
+	font-size: 9px;
+	font-family: arial, sans-serif;
+	color: #fff;
+}
+
+nav.navbar-inverse {
+	height: 72px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+}
+
+.hederimg {
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.pagevisit {
+	width: 100%;
+	background-color: #47d147;
+	margin-top: 13px;
+	height: 30px;
+}
+
+.visitcount {
+	text-align: center;
+	color: #ffffb3;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*===================================*/
+.input-field {
+	border: 3px groove cornflowerblue;
+	border-radius: 10px;
+	width: 40%;
+	padding: 1em 2em 2em 2em;
+	margin: 20px 20px 0px 20px;
+	float: left;
+}
+
+.qr-field {
+	border: 3px groove cornflowerblue;
+	border-radius: 10px;
+	width: 40%;
+	padding: .5em 2em 2em 2em;
+	margin: 20px 20px;
+	float: right;
+}
+
+.myoutput {
+	border: 3px;
+	border-radius: 10px;
+	margin: 100px auto 0px auto;
+	max-width: 1000px;
+	width: 100%;
+}
+
+.dllink {
+	text-align: center;
+	margin: 0px 0px 50px 0px;
+}
+
+h3 {
+	text-align: center;
+}
+
+.clearfix {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.gb-head-text {
+	font-size: 20px;
+}
+
+.card-list {
+	list-style: none;
+	padding: 0px 0px;
+	margin-top: 20px;
+}
+
+.card-list li {
+	display: inline-block;
+	margin: 5px 5px;
+}
+
+.card-list li a {
+	border: 1px solid red;
+	padding: 6px 10px;
+	width: 100px;
+	display: block;
+	color: #fff;
+	background: red;
+	text-decoration: none;
+}
+
+.card-list li a.blue {
+	border: 1px solid #1187ac;
+	background: #1187ac;
+}
+
+.card-list li:hover a.blue {
+	background: #fff;
+	color: #1187ac;
+}
+
+.card-list li a.purple {
+	border: 1px solid #761ad3;
+	background: #761ad3;
+}
+
+.card-list li:hover a.purple {
+	background: #fff;
+	color: #761ad3;
+}
+
+.card-list li a.red {
+	border: 1px solid #ff0000;
+	background: #ff0000;
+}
+
+.card-list li:hover a.red {
+	background: #fff;
+	color: #ff0000;
+}
+
+.card-list li a.yellow {
+	border: 1px solid #ff9d00;
+	background: #ff9d00;
+}
+
+.card-list li:hover a.yellow {
+	background: #fff;
+	color: #ff9d00;
+}
+
+.body {
+	background-color: whitesmoke;
+}

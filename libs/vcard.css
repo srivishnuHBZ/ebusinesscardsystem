@@ -1,0 +1,230 @@
+{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #ccc;
+}
+
+.card-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	perspective: 1000px;
+}
+
+.card {
+	width: 550px;
+	height: 300px;
+	background-color: #fff;
+	transform-style: preserve-3d;
+	position: relative;
+	box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+	transition: transform 1s;
+}
+
+.card-wrapper:hover .card {
+	transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: inherit;
+}
+
+.card-front{
+		display: flex;
+	background: linear-gradient(
+		100deg, 
+		rgb(255, 255, 255) 40%, 
+		rgb(38, 38, 38) 0 
+		);
+}
+
+.left {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.left img {
+	width: 80%;
+}
+
+.left h4 {
+	margin: 10px;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.left span {
+	text-transform: uppercase;
+	color: #0d5692;
+}
+.color-blue .left span{color: #1187ac;}
+.color-purple .left span{color: #761ad3;}
+.color-red .left span{color: #ff0000;}
+.color-yellow .left span{color: #ff9d00;}
+
+.right {
+	width: 60%;
+	color: #fff;
+}
+
+.right-content {
+	display: flex;
+	align-items: center;
+	margin: -8px 0;
+}
+
+.person {
+	background-color: #1187ac;
+	padding: 5px 0 5px 30px;
+	margin: 30px 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.color-blue .person{
+	background-color: #1187ac;
+}
+.color-purple .person{
+	background-color: #761ad3;
+}
+.color-red .person{
+	background-color: #ff0000;
+}
+
+.color-yellow .person{
+	background-color: #ff9d00;
+}
+
+.right-content i {
+	width: 35px;
+	height: 35px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #1187ac;
+	margin-right: 20px;
+}
+.color-blue .right-content i {
+	background-color: #1187ac;
+}
+.color-purple .right-content i {
+	background-color: #761ad3;
+}
+.color-red .right-content i {
+	background-color: #ff0000;
+}
+.color-yellow .right-content i {
+	background-color: #ff9d00;
+}
+
+.person h4 {
+	text-transform: uppercase;
+}
+
+.phone {
+	padding-left: 30px;
+}
+
+.email {
+	padding-left: 20px;
+}
+
+.address {
+	padding-left: 10px;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-back img {
+	width: 70%;
+}
+.vbtn{
+	text-decoration: none;
+    background-color: red;
+    border:1px solid red;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.vbtn:hover{
+	background-color: #fff;
+	border:1px solid red;
+	color: red;
+}
+.v-{}
+.v-blue{
+	background-color: #1187ac;
+	border:1px solid #1187ac;
+	color: #fff;
+}
+
+.v-blue:hover{
+	background-color: #fff;
+	border:1px solid #1187ac;
+	color: #1187ac;
+}
+.v-purple{
+	background-color: #761ad3;
+	border:1px solid #761ad3;
+	color: #fff;
+}
+.v-purple:hover{
+	background-color: #fff;
+	border:1px solid #761ad3;
+	color: #761ad3;
+}
+.v-red{
+	background-color: #ff0000;
+	border:1px solid #ff0000;
+	color: #fff;
+}
+.v-red:hover{
+	background-color: #fff;
+	border:1px solid #ff0000;
+	color: #ff0000;
+}
+
+.v-yellow{
+	background-color: #ff9d00;
+	border:1px solid #ff9d00;
+	color: #fff;
+}
+.v-yellow:hover{
+	background-color: #fff;
+	border:1px solid #ff9d00;
+	color: #ff9d00;
+}
+.ht h4{margin-top: 0px;margin-bottom: 0px;}
+.ht p{margin-top: 0px;margin-bottom: 0px;text-transform: uppercase;}
+.ht p.pos{text-transform: none;font-size: 13px;}
+
+
+
+
+
+
