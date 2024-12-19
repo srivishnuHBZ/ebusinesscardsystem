@@ -1,5 +1,5 @@
- <?php
- try {
+<?php
+try {
     $conn = new mysqli(
         '34.87.82.167',  // Ensure this is the correct Cloud SQL instance IP
         'admin',  // Create a specific user, not root

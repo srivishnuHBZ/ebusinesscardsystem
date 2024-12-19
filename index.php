@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include 'db_connect.php';
 
 // Include PHPMailer files directly
