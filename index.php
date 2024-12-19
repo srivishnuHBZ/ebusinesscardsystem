@@ -42,7 +42,7 @@ if (isset($_POST['forgot_password'])) {
         $update_stmt->execute();
 
         // Send reset link via email
-        $reset_link = "https://yourwebsite.com/reset_password.php?token=$reset_token"; // Change this URL accordingly
+        $reset_link = "https://ebusinesscardsystem.azurewebsites.net/reset_password.php?token=$reset_token"; // Change this URL accordingly
 
         $mail = new PHPMailer(true);  // Create a new PHPMailer instance
 
