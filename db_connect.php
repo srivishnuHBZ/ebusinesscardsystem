@@ -1,9 +1,9 @@
  <?php
  try {
     $conn = new mysqli(
-        '34.143.164.50',  // Ensure this is the correct Cloud SQL instance IP
-        'ruthra',  // Create a specific user, not root
-        'ruthra@123',  // Use a complex password
+        '34.87.82.167',  // Ensure this is the correct Cloud SQL instance IP
+        'admin',  // Create a specific user, not root
+        'admin@123',  // Use a complex password
         'qrcode',  // Database name
         3306,  // Optional: specify port
         5  // Optional: connection timeout in seconds
