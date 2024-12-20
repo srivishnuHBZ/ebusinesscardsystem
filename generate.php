@@ -1,5 +1,6 @@
 <?php
 include 'db_connect.php';
+// include 'session_manager.php';
 
 session_start();
 
@@ -62,6 +63,12 @@ if(isset($_POST['name']) && isset($_POST['position']) && isset($_POST['phone']) 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="libs/navbarclock.js"></script>
     <style>
+        body {
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
         .navbar-inverse {
             background-color: grey;
             border-color: #2c3e50;
