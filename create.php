@@ -1,5 +1,6 @@
 <?php
 session_start();
+// include 'session_manager.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
@@ -68,7 +69,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'send_otp') {
         
         $mail->isHTML(true);
         $mail->Subject = 'Your OTP for E-Business Card Generation';
-        $mail->Body    = "Your One-Time Password (OTP) is: <b>$otp</b><br>This OTP is valid for 10 minutes.";
+        $mail->Body    = "Your One-Time Password (OTP) is: <b>$otp</b><br>This OTP is valid for 1 minutes.";
 
         $mail->send();
         echo json_encode(['status' => 'success', 'message' => 'OTP sent successfully']);
@@ -90,7 +91,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'verify_otp') {
     // Check OTP format and expiration
     if (isset($_SESSION['generatedOtp']) && 
         $userOtp === $_SESSION['generatedOtp'] && 
-        ($currentTime - $_SESSION['otpTimestamp']) <= 600) {
+        ($currentTime - $_SESSION['otpTimestamp']) <= 60) {
         
         echo json_encode(['status' => 'success', 'message' => 'OTP verified']);
     } else {
@@ -117,6 +118,12 @@ if (isset($_POST['logout'])) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="libs/navbarclock.js"></script>
     <style>
+        .body {
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
         .navbar-inverse {
             background-color: grey;
             border-color: #2c3e50;
@@ -192,7 +199,7 @@ if (isset($_POST['logout'])) {
         </div>
     </nav>
     <div class="myoutput">
-        <h3><strong>Create Your E-BUSINESS CARD</strong></h3>
+        <h3 style="color: white;"><strong>Create Your E-BUSINESS CARD</strong></h3>
         <div class="form-container">
             <h3>Contact Details</h3>
             <form method="post" action="generate.php" id="businessCardForm">
