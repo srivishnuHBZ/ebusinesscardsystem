@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 include 'db_connect.php';
-include 'session_manager.php';
+// include 'session_manager.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
