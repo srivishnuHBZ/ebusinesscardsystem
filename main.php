@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 include 'db_connect.php';
+include 'session_manager.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
@@ -40,14 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['id_card']) && $_FILES['id_card']['tmp_name']) {
         $id_card_tmp = $_FILES['id_card']['tmp_name'];
         $id_card_size = $_FILES['id_card']['size'];
-        $id_card_type = $_FILES['id_card']['type'];
+        $id_card_type = mime_content_type($id_card_tmp); // Use `mime_content_type` to get the MIME type.
 
         if ($id_card_size > 5000000) {
             $error = "File size is too large. Please upload a file under 5MB.";
-        } elseif (!in_array($id_card_type, ['image/jpeg', 'image/png', 'image/gif'])) {
-            $error = "Invalid file type. Only JPG, PNG, and GIF files are allowed.";
+        } elseif (!in_array($id_card_type, ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'])) {
+            $error = "Invalid file type. Only JPG, PNG, GIF, and PDF files are allowed.";
         } else {
-            $id_card = base64_encode(file_get_contents($id_card_tmp));
+            $id_card = base64_encode(file_get_contents($id_card_tmp)); // Encode the file as Base64.
         }
     }
 
@@ -90,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             // If inactive, show the modal with the message
             echo "<script>
-                    alert('Your account is not active yet. Please wait for admin approval.');
+                    alert('Your request is sent to the admin, please wait untill admin activates your account');
                     window.location.href = 'main.php'; // Redirect to main page after showing the message.
                   </script>";
         }
@@ -122,8 +123,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f9f9f9;
+            /* background-color: #f9f9f9; */
             margin: 0;
+
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
         }
         .container {
             text-align: center;

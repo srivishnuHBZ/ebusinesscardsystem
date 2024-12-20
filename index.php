@@ -111,12 +111,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BUSINESS CARD SYSTEM - Login</title>
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
     <style>
         body {
-            background-color: black;
-            color: white; 
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
         }
 
         .container {
@@ -124,25 +128,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh; 
+            height: 100vh;
         }
 
         .login-container {
-            background-color: rgba(255, 255, 255, 0.1); 
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-            width: 300px;
-        }
-
-        .login-container h2 {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
         .logo {
-            width: 300px;
-            height: 300px;
-            margin-bottom: -100px;  
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        .alert {
+            margin-top: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 10px;
+        }
+
+        .text-center a {
+            color: #ff6f61;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -150,11 +190,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
 <div class="container">
     <img src="img/polilogo.png" class="logo" alt="Logo">
     <h1>E-BUSINESS CARD SYSTEM</h1>
-    <br/>
     <div class="login-container">
         <h2>Login</h2>
         <?php if (isset($error)) { ?>
-            <div class="alert alert-danger"><?php echo $error; ?></div>
+            <div class="alert"><?php echo $error; ?></div>
         <?php } ?>
 
         <!-- Login Form -->
@@ -168,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
                     <label>Password</label>
                     <input type="password" class="form-control" name="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
             <div class="text-center">
                 <p>Don't have an account? <a href="register.php">Register here</a></p>
@@ -183,11 +222,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
                     <label>Email</label>
                     <input type="email" class="form-control" name="email" required>
                 </div>
-                <button type="submit" name="forgot_password" class="btn btn-danger btn-block">Send Reset Link</button>
+                <button type="submit" name="forgot_password" class="btn btn-danger">Send Reset Link</button>
             </form>
         <?php } ?>
     </div>
 </div>
 </body>
 </html>
-

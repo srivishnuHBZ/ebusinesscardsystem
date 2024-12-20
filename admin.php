@@ -38,7 +38,9 @@ $result = $conn->query($query);
     <script src="libs/navbarclock.js"></script>
     <style>
         body {
-            background-color: #f4f6f9;
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         .admin-container {
@@ -186,7 +188,11 @@ $result = $conn->query($query);
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['username']); ?></td>
-                            <td><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td>
+                                <a href="profile.php?user_id=<?php echo $row['id']; ?>">
+                                    <?php echo htmlspecialchars($row['username']); ?>
+                                </a>
+                            </td>
                             <td><?php echo htmlspecialchars($row['email']); ?></td>
                             <td><?php echo htmlspecialchars($row['staffid']); ?></td>
                             <td>

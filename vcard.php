@@ -25,6 +25,13 @@ $address = $_GET['address'];
     />
     <link rel="stylesheet" href="libs/vcard.css">
     <title>vCard</title>
+    <style>
+        body {
+            background: url('img/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+    </style>
   </head>
   <body>
    <div class="card-wrapper">
@@ -64,9 +71,9 @@ $address = $_GET['address'];
                 </div>
              </div> 
         </div>
-		 	<div class="card-back">
-		 		<img src="img/logo.png"/>
-		 	</div>
+        <div class="card-back">
+  <img src="img/cardlogo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;" />
+</div>
      </div>
    </div>
    <div class="canvas" style="height: 0px;overflow: hidden;">
