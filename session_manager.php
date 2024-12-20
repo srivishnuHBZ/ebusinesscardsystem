@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start();
 
 // Set session lifetime to 24 hours (86400 seconds)
@@ -23,4 +23,4 @@ if (!isset($_SESSION['username'])) {
     header("Location: index.php"); // Redirect to login page
     exit();
 }
-?> -->
+?>
