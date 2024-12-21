@@ -1,11 +1,22 @@
 <?php
 session_start();
 include 'db_connect.php';
-include 'session_manager.php';
-
 // Check if user is logged in and authorized
 if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     header("Location: index.php");
+    exit();
+}
+
+// Set the session lifetime to 24 hours (in seconds)
+define('SESSION_LIFETIME', 24 * 60 * 60);
+
+// Check if session was created more than 24 hours ago
+if (!isset($_SESSION['created_at'])) {
+    $_SESSION['created_at'] = time();
+} elseif (time() - $_SESSION['created_at'] > SESSION_LIFETIME) {
+    // Destroy the session and redirect to login page
+    session_destroy();
+    header("Location: index.php?message=Session expired. Please log in again.");
     exit();
 }
 

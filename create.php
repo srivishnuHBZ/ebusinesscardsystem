@@ -1,9 +1,21 @@
 <?php
 session_start();
-// include 'session_manager.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
+    exit();
+}
+
+// Set the session lifetime to 24 hours (in seconds)
+define('SESSION_LIFETIME', 24 * 60 * 60);
+
+// Check if session was created more than 24 hours ago
+if (!isset($_SESSION['created_at'])) {
+    $_SESSION['created_at'] = time();
+} elseif (time() - $_SESSION['created_at'] > SESSION_LIFETIME) {
+    // Destroy the session and redirect to login page
+    session_destroy();
+    header("Location: index.php?message=Session expired. Please log in again.");
     exit();
 }
 
