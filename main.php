@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height: auto;
             width: 160px;
             margin: 5px;
-            margin-top: -50px;
+            margin-top: -30px;
         }
         #clockdate {
             float: right;
@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="index.php">
-                <img src="img/polilogo.png" class="headerimg" alt="Logo">
+                <img src="img/navbarlogo.png" class="headerimg" alt="Logo">
             </a>
         </div>
         <form method="post" action="main.php" id="logout-form" style="display: none;">
