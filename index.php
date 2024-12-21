@@ -142,8 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['forgot_password'])) {
         }
 
         .logo {
-            width: 150px;
-            margin-bottom: 20px;
+            width: 200px;
+            margin-top: 30px;
         }
 
         .login-container h2 {
