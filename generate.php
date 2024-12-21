@@ -187,7 +187,7 @@ if(isset($_POST['name']) && isset($_POST['position']) && isset($_POST['phone']) 
         </div>
         <div class="clearfix"></div>
         <div class="dllink">
-            <h4>Copyrights 2024, Universiti Tun Hussein Onn Malaysia (UTHM)</h4>
+            <h4>Copyrights 2024, NavinSilk&Tailoring (Sungai Petani)</h4>
         </div>
     </div>
 </body>
