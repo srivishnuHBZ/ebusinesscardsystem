@@ -290,9 +290,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" class="form-control" name="identificationNo" placeholder="Enter your Identification No." value="<?php echo $user['identificationNo']; ?>">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Staff ID</label>
-                    <input type="text" class="form-control" name="staffId" placeholder="Enter your Staff ID" value="<?php echo $user['staffId']; ?>">
-                </div>
+                <label>Staff ID</label>
+                <input type="text" class="form-control" name="staffId" placeholder="Enter your Staff ID" 
+                    value="<?php echo $user['staffId']; ?>" <?php echo !empty($user['staffId']) ? 'readonly' : ''; ?>>
+            </div>
             </div>
             <div class="form-row">
                 <div class="form-group">

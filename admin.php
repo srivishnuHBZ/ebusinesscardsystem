@@ -23,6 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_status'])) {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
+    $userId = intval($_POST['user_id']);
+
+    $deleteQuery = "DELETE FROM users WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $userId);
+
+    if ($stmt->execute()) {
+        echo "<p style='color: green;'>User deleted successfully.</p>";
+    } else {
+        echo "<p style='color: red;'>Error deleting user: " . htmlspecialchars($stmt->error) . "</p>";
+    }
+}
+
+
 $query = "SELECT id, username, name, email, status,staffid  FROM users WHERE username != 'admin'"; // Exclude admin account
 $result = $conn->query($query);
 ?>
@@ -137,6 +152,32 @@ $result = $conn->query($query);
             cursor: pointer;
         }
 
+        .btn-outline-primary {
+            color: #007bff; 
+        }
+
+        .btn-outline-primary:hover {
+            background-color: rgba(0, 123, 255, 0.1); 
+            color: #0056b3; 
+        }
+
+        .btn-outline-danger {
+            color: #dc3545; 
+        }
+
+        .btn-outline-danger:hover {
+            background-color: rgba(220, 53, 69, 0.1); 
+            color: #c82333;
+        }
+
+        .btn i {
+            font-size: 18px; 
+        }
+
+        .btn-sm {
+            padding: 6px 10px;  
+        }
+
         @media (max-width: 768px) {
             .table-responsive {
                 font-size: 0.9em;
@@ -201,14 +242,22 @@ $result = $conn->query($query);
                                 </span>
                             </td>
                             <td>
-                                <form method="post" action="admin.php">
-                                    <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                                    <input type="hidden" name="current_status" value="<?php echo $row['status']; ?>">
-                                    <button type="submit" name="toggle_status" class="btn btn-sm btn-toggle-status">
-                                        Toggle Status
-                                    </button>
-                                </form>
-                            </td>
+                            <form method="post" action="admin.php">
+                                <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="current_status" value="<?php echo $row['status']; ?>">
+                                
+                                
+                                <button type="submit" name="toggle_status" class="btn btn-outline-primary btn-sm" title="Toggle Status">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                
+                             
+                                <button type="submit" name="delete_user" class="btn btn-outline-danger btn-sm" 
+                                        onclick="return confirm('Are you sure you want to delete this user?');" title="Delete User">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
