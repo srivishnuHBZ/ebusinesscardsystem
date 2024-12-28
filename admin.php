@@ -212,7 +212,7 @@ $result = $conn->query($query);
     </div>
 </nav>
     <div class="container admin-container">
-        <h2 class="mb-4 text-center">User Management</h2>
+        <h2 class="mb-4 text-center">Admin Dashboard</h2>
         <div class="table-responsive">
             <table class="table table-user-management">
                 <thead>
