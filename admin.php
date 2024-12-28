@@ -45,7 +45,7 @@ $result = $conn->query($query);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin Page - User Management</title>
+    <title>Admin Page - Admin Dashboard</title>
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
     <link rel="icon" href="img/favicon-32x32.png" type="image/png">
     <link rel="stylesheet" href="libs/style.css">
